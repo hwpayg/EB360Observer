@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <EBItems ElectricBusiness="JD" PriceCrawlUrl="http://p.3.cn/prices/get?skuid=J_{0}" PromotionCrawlUrl="http://cd.jd.com/promotion/v2?skuId={0}{1}">
+    <Item>
+      <skuid>1174777</skuid>
+      <name>【国行限量版】Xbox One 体感游戏机 （带 Kinect 版本,Day One 限量版,含四款免费游戏）</name>
+      <PriceQueryString></PriceQueryString>
+      <PromotionQueryString>`area=2_2841_51980_0`shopId=1000000326`venderId=0`cat=670%2C12800%2C1280</PromotionQueryString>      
+    </Item>
+    <Item>
+      <skuid>1228506</skuid>
+      <name>【标准版 带Kinect】微软（Microsoft）Xbox One 体感游戏机</name>
+      <PriceQueryString></PriceQueryString>
+      <PromotionQueryString>`area=2_2841_51980_0`shopId=1000000326`venderId=0`cat=670%2C12800%2C1280</PromotionQueryString>
+    </Item>
+    <Item>
+      <skuid>1872685</skuid>
+      <name>索尼（SONY）【PS4国行主机套装】PlayStation 4 讨鬼传 纪念珍藏套装</name>
+      <PriceQueryString></PriceQueryString>
+      <PromotionQueryString>`area=2_2841_51980_0`shopId=1000000326`venderId=0`cat=670%2C12800%2C1280</PromotionQueryString>
+    </Item>
+    <Item>
+      <skuid>1295138</skuid>
+      <name>【PS4国行线上首发版】索尼（SONY）PlayStation 4 电脑娱乐机（黑色主机+手柄1个+2张游戏兑换卡）</name>
+      <PriceQueryString></PriceQueryString>
+      <PromotionQueryString>`area=2_2841_51980_0`shopId=1000000326`venderId=0`cat=670%2C12800%2C1280</PromotionQueryString>
+    </Item>
+    <Item>
+      <skuid>1378529</skuid>
+      <name>Apple 配备 Retina 显示屏的 MacBook Pro MF839CH/A 13.3英寸宽屏笔记本电脑 128GB 闪存</name>
+      <PriceQueryString></PriceQueryString>
+      <PromotionQueryString>`area=2_2841_51980_0`shopId=1000000326`venderId=0`cat=670%2C12800%2C1280</PromotionQueryString>
+    </Item>
+  </EBItems>
+  <EBItems ElectricBusiness="SUNING" PriceCrawlUrl="http://icps.suning.com/icps-web/getAllPriceFourPage/000000000{0}__021_0210101_1_pc_showSaleStatus.vhtm" PromotionCrawlUrl="http://www.suning.com/emall/proGift_10052_10051_000000000{0}_1120__{1}_9264_0001_FourPage.callbackGiftInfo_.html">
+    <Item>
+      <skuid>121283624</skuid>
+      <name>Xbox One + KINECT 家庭娱乐游戏机 (首发版) 6RZ-00098</name>
+      <PriceQueryString></PriceQueryString>
+      <PromotionQueryString></PromotionQueryString>
+    </Item>
+    <Item>
+      <skuid>121283757</skuid>
+      <name>Xbox One + KINECT家庭娱乐游戏机 6RZ-00099</name>
+      <PriceQueryString></PriceQueryString>
+      <PromotionQueryString></PromotionQueryString>
+    </Item>
+    <Item>
+      <skuid>125214242</skuid>
+      <name>索尼（SONY）PlayStation4 电脑娱乐机冰河白（白色PS4主机+1个手柄+2张游戏兑换卡</name>
+      <PriceQueryString></PriceQueryString>
+      <PromotionQueryString></PromotionQueryString>
+    </Item>
+    <Item>
+      <skuid>125214057</skuid>
+      <name>索尼（SONY）PlayStation4 电脑娱乐机极致黑（黑色PS4主机+1个手柄+2张游戏兑换卡）</name>
+      <PriceQueryString></PriceQueryString>
+      <PromotionQueryString></PromotionQueryString>
+    </Item>
+    <Item>
+      <skuid>126491128</skuid>
+      <name>Apple MacBook Pro MF839CH/A 13.3英寸宽屏笔记本电脑</name>
+      <PriceQueryString></PriceQueryString>
+      <PromotionQueryString></PromotionQueryString>
+    </Item>
+  </EBItems>
+  <EBItems ElectricBusiness="YHD" PriceCrawlUrl="http://gps.yhd.com/restful/detail?pmId={0}" PromotionCrawlUrl="http://item-home.yhd.com/item/ajax/ajaxProductPromotion.do?productMercantID={0}{1}">
+    <Item>
+      <skuid>42729413</skuid>
+      <name>Sony 索尼 PlayStation 4 电脑娱乐机 黑色 （主机+手柄1个+2张游戏兑换卡）</name>
+      <PriceQueryString>`mcsite=1`provinceId=1</PriceQueryString>
+      <PromotionQueryString>`merchantID={0}`productID={1}</PromotionQueryString>
+    </Item>
+    <Item>
+      <skuid>45056999</skuid>
+      <name>Apple 苹果 MacBook Pro MF839CH/A 13英寸 银色 笔记本电脑 - i5-2.7GHz/8GB/128GB FLASH</name>
+      <PriceQueryString>`mcsite=1`provinceId=1</PriceQueryString>
+      <PromotionQueryString>`merchantID={0}`productID={1}</PromotionQueryString>
+    </Item>
+  </EBItems>  
+</Items>

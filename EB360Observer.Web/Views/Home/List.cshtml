@@ -1,0 +1,111 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "商品列表";
+}
+@using EB360Observer.Web.Helpers
+<div class="container">
+    <div class="starter-template">
+        @using (Html.BeginForm("index", "Home"))
+        {
+            <span style="float:left;">开始时间：@Html.TextBox("startDate", "", new { @readonly = true })@*<input size="16" type="text" name="startDate" value="" readonly class="form_datetime" id="startDate">*@</span>
+            <span style="margin-left:10px;float:left;">结束时间：@Html.TextBox("endDate", "", new { @readonly = true })@*<input size="16" name="endDate" value="" type="text" readonly class="form_datetime" id="endDate">*@</span>
+            <span style="margin-left:20px;float:left;">商品名称：@Html.TextBox("nam")</span>
+            <span style="margin-left:20px;float:left;">商家：@Html.DropDownList(EB360Observer.Entity.ElectricBusinessEnum.JD, "ElectricBusiness")</span>
+            <input type="button" class="btn btn-default" onclick="searchList(1); return false;" value="查询" />
+        }
+        <div id="itemList">
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .pagination ul > li > input {
+        vertical-align: top;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        height: auto;
+        *height: 20px;
+        margin-bottom: 0px;
+        background-color: #fff;
+        border-left-width: 0;
+        width: 40px;
+        float: left;
+        min-height: auto;
+        *min-height: 20px;
+    }
+</style>
+
+<script type="text/javascript" src="~/Scripts/bootstrap/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="~/Scripts/bootstrap/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<link href="~/Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript">
+    $(function () {
+        $("#startDate").datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            endDate: new Date()
+        });
+        $("#endDate").datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            endDate: new Date()
+        });
+        searchList(@(ViewBag.PageIndex==null?1:ViewBag.PageIndex));
+    });
+
+
+    function searchList(pageIndex) {
+        pageIndex = (pageIndex == null) ? 1 : pageIndex;
+        // 取文本框值跳转页面
+        if (pageIndex == 0) {
+            if (jQuery('#txtGoPage').val() == '' || isNaN(jQuery('#txtGoPage').val())) {
+                jQuery('#txtGoPage').val('1');
+            }
+            pageIndex = parseInt(jQuery('#txtGoPage').val());
+        }
+
+        var Name = jQuery.trim(jQuery("#nam").val());
+        var BeginDate = jQuery.trim(jQuery("#startDate").val());
+        var EndDate = jQuery.trim(jQuery("#endDate").val());
+        var ElectricBusiness = jQuery.trim(jQuery("#ElectricBusiness").val());
+
+        var pageSize = 10;
+
+        jQuery.ajax({
+            type: "POST",
+            data: {
+                Name: Name,
+                BeginDate: BeginDate,
+                EndDate: EndDate,
+                ElectricBusiness: ElectricBusiness,
+                PageIndex: pageIndex,
+                PageSize: pageSize
+            },
+            url: "@Url.Action("ListView","Home")",
+            success: function (res) {
+                if (res != "") {
+                    $("#itemList").html(res);
+                } else {
+                    alert("操作失败，请重试！");
+                }
+            },
+            error: function (e) {
+                alert("操作异常，请联系管理员！");
+            }
+        });
+    }
+</script>

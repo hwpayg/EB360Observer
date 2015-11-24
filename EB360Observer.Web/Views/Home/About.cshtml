@@ -1,0 +1,6 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var categorys = ViewBag.Categorys as IEnumerable<string>;
+    var series = ViewBag.Series as Dictionary<string, List<decimal>>;
+    ViewBag.Title = "关于";
+}

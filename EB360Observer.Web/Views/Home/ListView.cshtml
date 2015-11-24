@@ -1,0 +1,62 @@
+﻿@using EB360Observer.Entity
+@{
+    Layout = null;
+    var list = new List<EBItem>();
+    if (ViewBag.ItemList != null)
+    {
+        list = (List<EBItem>)ViewBag.ItemList;
+    }
+}
+@if (list != null && list.Count > 0)
+{
+    <table width="100%" class="table table-bordered" style="margin-top:20px;">
+        <tr>
+            <th style="width: 60px;">
+                Skuid
+            </th>
+            <th style="text-align: left">
+                商品名称
+            </th>
+            <th style="width:90px;">
+                价格(RMB)
+            </th>
+            <th style="width: 280px;">
+                礼品
+            </th>
+            <th style="width:160px;">
+                抓取时间
+            </th>
+            <th style="width: 70px;">
+                商家
+            </th>
+        </tr>
+        @foreach (var item in list)
+        {
+            <tr>
+                <td>
+                    <a href="@item.ProductUrl" target="_blank">@item.Skuid </a>
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td style="text-align: left" title="@item.PriceDesc">
+                    @item.Price.ToString("f2")
+                </td>
+                <td title="@item.PromotionDesc">
+                    @(item.Gift ?? string.Empty)
+                </td>
+                <td>
+                    @(item.CreateTime.Value.ToString("yyyy-MM-dd HH:mm:ss"))
+                </td>
+                <td>
+                    @item.ElectricBusiness
+                </td>
+            </tr>
+        }
+    </table>
+    @Html.Raw(ViewBag.StrPager)
+}
+else
+{
+    <div style="text-align:center;">暂无数据...</div>
+}
